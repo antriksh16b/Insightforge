@@ -15,11 +15,11 @@ import PostForm from './Components/post-form/PostForm';
 
 const router=createBrowserRouter([
   {
-    path:"/Insightforge",
+    path:"/",
     element:<App></App>,
     children:[
       {
-        path:"/Insightforge",
+        path:"/",
         element:
                <Home></Home>
       },
