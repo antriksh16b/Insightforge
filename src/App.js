@@ -1,5 +1,5 @@
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+
 import {Outlet} from "react-router-dom";
 import {ThemeProvider} from "./context/ThemeContext"
 import { useState,useEffect} from "react";

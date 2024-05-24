@@ -4,9 +4,9 @@ import useTheme from "../context/ThemeContext";
 import {useSelector} from "react-redux";
 import LogoutButton from "./LogoutButton";
 import { Svg } from "../svgs/Svg";
-import Button from "./Button";
 
 function Header(){
+    // eslint-disable-next-line
     let [upScroll,setUpScroll]=useState(false);
     let [prevScroll,setPrevScroll]=useState(0);
     let {themeMode,lightTheme,darkTheme}=useTheme();
@@ -37,6 +37,7 @@ function Header(){
             svg:Svg.CreatePost
         }
     ]
+    // eslint-disable-next-line
     function handleThemeMode(){
         if(themeMode==="light"){
             darkTheme();

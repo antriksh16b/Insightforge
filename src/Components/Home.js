@@ -10,7 +10,7 @@ function Home(){
             {status ? "Logged In" : "Login to read Blog"}</h1>
             {!status && <Button className="bg-blue-950 hover:bg-blue-950 text-white text-xl px-4 py-2 border-white m-1 border-4 active:border-blue-200">Get started</Button>}
             </div>
-            <img src={bg} className="w-2/6"></img>
+            <img src={bg} alt="random" className="w-2/6"></img>
         </div>
     ); 
 }

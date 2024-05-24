@@ -1,4 +1,5 @@
 import conf from "../conf/conf";
+// eslint-disable-next-line
 import { Client,ID,Databases, Query } from "appwrite";
 
 class DatabaseService{

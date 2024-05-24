@@ -9,6 +9,7 @@ import {useNavigate} from "react-router";
 function PostForm({post}){
     const userData=useSelector(state=>(state.userData));
     const navigate=useNavigate();
+    // eslint-disable-next-line
     const {register,handleSubmit,watch,control,setValue,getValue}=useForm({
         defaultValues:{
             title: post?.title || "",

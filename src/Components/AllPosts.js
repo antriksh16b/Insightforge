@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import databaseService from "../appwrite/database";
 import { useSelector } from "react-redux";
 import Card from "./Card";
 import usePostInfo from "./CustomHooks/usePostInfo";
@@ -8,6 +7,7 @@ export default function AllPosts(){
     let userData=useSelector(state=>(state.userData));
     let [page,setPage]=useState(1);
     let data=usePostInfo({userId:userData.$id,page:page});
+     // eslint-disable-next-line
     let [loading,setLoading]=useState(true);
     let loader=useRef(null);
 

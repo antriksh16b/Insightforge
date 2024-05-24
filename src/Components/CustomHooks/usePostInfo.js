@@ -4,7 +4,6 @@ import { Query } from "appwrite";
 
 function usePostInfo({userId,page}){
     let [data,setData]=useState([]);
-    let [loading,setLoading]=useState()
     useEffect(()=>{
         let getPosts=async()=>{
             let queries=[];
@@ -30,6 +29,7 @@ function usePostInfo({userId,page}){
             
         }
         getPosts();
+     // eslint-disable-next-line   
     },[page,userId])
     return (data)
 }
