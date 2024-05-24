@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Insightforge/static/css/main.6d3f6360.css",
-    "main.js": "/Insightforge/static/js/main.c136e78f.js",
+    "main.js": "/Insightforge/static/js/main.47973eb6.js",
     "static/js/453.7bac5da6.chunk.js": "/Insightforge/static/js/453.7bac5da6.chunk.js",
     "static/media/bg.svg": "/Insightforge/static/media/bg.b6bdb7d1a457f929f4293fcfd94cafab.svg",
     "index.html": "/Insightforge/index.html",
     "main.6d3f6360.css.map": "/Insightforge/static/css/main.6d3f6360.css.map",
-    "main.c136e78f.js.map": "/Insightforge/static/js/main.c136e78f.js.map",
+    "main.47973eb6.js.map": "/Insightforge/static/js/main.47973eb6.js.map",
     "453.7bac5da6.chunk.js.map": "/Insightforge/static/js/453.7bac5da6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d3f6360.css",
-    "static/js/main.c136e78f.js"
+    "static/js/main.47973eb6.js"
   ]
 }
