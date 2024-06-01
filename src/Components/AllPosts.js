@@ -6,16 +6,20 @@ import usePostInfo from "./CustomHooks/usePostInfo";
 export default function AllPosts(){
     let userData=useSelector(state=>(state.userData));
     let [page,setPage]=useState(1);
-    let data=usePostInfo({userId:userData.$id,page:page});
-     // eslint-disable-next-line
+    let {data,complete}=usePostInfo({userId:userData.$id,page:page});
     let [loading,setLoading]=useState(true);
     let loader=useRef(null);
 
-    let handleObserver=useCallback((entries)=>{
+    let handleObserver=useCallback((entries,observer)=>{
         let target=entries[0];
         if(target.isIntersecting && data.length>0){
             setPage((prev)=>(prev+1));
-        }},[data.length])
+        }
+        if(complete){
+            observer.disconnect();
+            setLoading(false);
+        }
+    },[data.length,complete])
 
     useEffect(()=>{
         let observer= new IntersectionObserver(handleObserver);
@@ -29,8 +33,6 @@ export default function AllPosts(){
     <div className="flex w-full items-center flex-wrap justify-center">
            {data && data.map((currentValue)=>(
            <Card data={currentValue}></Card>))}
-           {console.log(data) }
-           {console.log(page)}
         {loading &&
             <div className="mx-auto overflow-y-scroll flex items-center justify-center w-full" role="status">
                 <svg aria-hidden="true" className="w-8 h-8 text-gray-100 animate-spin dark:text-gray-600 fill-black" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -10,23 +10,23 @@ function Footer(){
              <div className={`flex gap-2 ${themeMode==="dark" && "text-white textwhite"} sm:gap-10`}>
                  <div className="flex flex-col">
                       <h1 className="text-blue-950 mb-7 font-medium">Company</h1>
-                      <p>Features</p>
-                      <p>Pricing</p>
-                      <p>Affiliate program</p>
-                      <p>Press kit</p>
+                      <p className="cursor-pointer">Features</p>
+                      <p className="cursor-pointer">Pricing</p>
+                      <p className="cursor-pointer">Affiliate program</p>
+                      <p className="cursor-pointer">Press kit</p>
                  </div>
                  <div className="flex flex-col">
                       <h1 className="text-blue-950 mb-7 font-medium">Support</h1>
-                      <p>Account</p>
-                      <p>Help</p>
-                      <p>Contact us</p>
-                      <p>Customer Support</p>
+                      <p className="cursor-pointer">Account</p>
+                      <p className="cursor-pointer">Help</p>
+                      <p className="cursor-pointer">Contact us</p>
+                      <p className="cursor-pointer">Customer Support</p>
                  </div>
                  <div className="flex flex-col ">
                       <h1 className="text-blue-950 mb-7 font-medium">Legal</h1>
-                      <p>Terms & Conditions</p>
-                      <p>Privacy Policy</p>
-                      <p>Licensing</p>
+                      <p className="cursor-pointer">Terms & Conditions</p>
+                      <p className="cursor-pointer">Privacy Policy</p>
+                      <p className="cursor-pointer">Licensing</p>
                  </div>
              </div>
         </footer>

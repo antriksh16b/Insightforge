@@ -15,7 +15,7 @@ function Post(){
     return(
         <div className="">
             <img
-            src={}></img>
+            ></img>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { Query } from "appwrite";
 
 function usePostInfo({userId,page}){
     let [data,setData]=useState([]);
+    let [complete,setComplete]=useState(false);
     useEffect(()=>{
         let getPosts=async()=>{
             let queries=[];
@@ -13,12 +14,16 @@ function usePostInfo({userId,page}){
                 queries=[Query.equal("userId",[userId]),Query.limit(9)];
             }
             else{
+
                 if(data.length>0){
                 queries=[Query.equal("userId",[userId]),Query.limit(9),Query.cursorAfter(data[data.length-1].$id)];
                 }
             }
             try{
-            let  response= await databaseService.getAllPosts({queries:queries});
+            let response= await databaseService.getAllPosts({queries:queries});
+            if(response.documents.length===0){
+                 setComplete(true);
+            }
             if(response!=null){
                 setData((prev)=>[...prev,...response.documents]);
             }
@@ -28,10 +33,10 @@ function usePostInfo({userId,page}){
             }
             
         }
+
         getPosts();
-     // eslint-disable-next-line   
     },[page,userId])
-    return (data)
+    return ({data,complete})
 }
 
 export default usePostInfo;

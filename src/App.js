@@ -6,10 +6,13 @@ import { useState,useEffect} from "react";
 import authService from "./appwrite/auth";
 import { useDispatch } from "react-redux";
 import { login,logout } from "./features/authSlice";
+import { useSelector } from "react-redux";
+import Footer from "./Components/Footer";
 
 function App() {
    let [themeMode,setThemeMode]=useState("light");
    let [loading,setLoading]=useState(true);
+   let authStatus=useSelector((state)=>(state.status));
    let dispatch=useDispatch();
    function lightTheme(){
       setThemeMode("light");
@@ -40,7 +43,8 @@ function App() {
    useEffect(()=>{
       document.querySelector("html").classList.remove("light","dark");
       document.querySelector("html").classList.add(themeMode);
-   },[themeMode])
+   },[themeMode]);
+
    return loading ?
            (
             <div className="w-full h-lvh flex justify-center items-center">
@@ -48,11 +52,13 @@ function App() {
               Loading ...
             </h1>
             </div>
-         ) :
+         ):
          (<ThemeProvider value={{themeMode,lightTheme,darkTheme}}>
           <div className={`flex flex-col dark:bg-slate-800 ${themeMode==="dark" && "text-white"}`}>
           <Header></Header>
           <Outlet></Outlet>
+          {!authStatus ? 
+            <Footer></Footer>:<></>}
           </div>
          </ThemeProvider>
          );

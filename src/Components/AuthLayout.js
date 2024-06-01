@@ -12,7 +12,7 @@ function Protected({children,authentication=true}){
         }
         else if(!authentication && status!== authentication){
             
-            navigate('/Insightforge');
+            navigate('/');
         }
         setLoader(false);
     },[authentication,status,navigate]);
