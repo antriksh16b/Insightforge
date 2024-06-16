@@ -1,7 +1,7 @@
 import {MongoClient,ServerApiVersion} from "mongodb";
 
 class MongoDBService{
-    client=new MongoClient("mongodb+srv://antriksh16b:XdgqtaRt6TxVoqxd@cluster0.t66owvs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{
+    client=new MongoClient("process.env.MONGODB_URI",{
         serverApi:{
         version:ServerApiVersion.v1,
         strict:true,
